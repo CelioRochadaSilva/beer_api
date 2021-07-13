@@ -47,7 +47,8 @@ public class BeerControllerTest {
     @InjectMocks
     private BeerController beerController;
 
-    @BeforeEach
+
+     @BeforeEach
     void setUp() {
         mockMvc = MockMvcBuilders.standaloneSetup(beerController)
                 .setCustomArgumentResolvers(new PageableHandlerMethodArgumentResolver())

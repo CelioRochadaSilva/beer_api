@@ -60,10 +60,7 @@ public class BeerServiceTest {
 
     }
 
-    private void assertThatThrows() {
-    }
-
-    //private void assertThrows(Class<BeerAlreadyRegisteredException> beerAlreadyRegisteredExceptionClass, Object o) {
+       //private void assertThrows(Class<BeerAlreadyRegisteredException> beerAlreadyRegisteredExceptionClass, Object o) {
     }
 
 
