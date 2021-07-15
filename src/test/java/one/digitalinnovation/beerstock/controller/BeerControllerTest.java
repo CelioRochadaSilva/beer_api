@@ -6,9 +6,9 @@ import one.digitalinnovation.beerstock.dto.QuantityDTO;
 import one.digitalinnovation.beerstock.exception.BeerNotFoundException;
 import one.digitalinnovation.beerstock.exception.BeerStockExceededException;
 import one.digitalinnovation.beerstock.service.BeerService;
-import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+//import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@ExtendWith(MockitoExtension.class)
+//@ExtendWith(MockitoExtension.class)
 public class BeerControllerTest {
 
     private static final String BEER_API_URL_PATH = "/api/v1/beers";
@@ -46,7 +46,6 @@ public class BeerControllerTest {
 
     @InjectMocks
     private BeerController beerController;
-
 
      @BeforeEach
     void setUp() {
