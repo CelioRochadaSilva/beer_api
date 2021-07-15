@@ -58,34 +58,35 @@ public class BeerServiceTest {
         assertThrows(BeerAlreadyRegisteredException.class, () -> beerService.createBeer(expectedBeerDTO));
     }
 
-        @Test
-        void whenValidBeerNameIsGivenThenReturnABeer () throws BeerNotFoundException {
-            // given
-            BeerDTO expectedFoundBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
-            Beer expectedFoundBeer = beerMapper.toModel(expectedFoundBeerDTO);
+    @Test
+    void whenValidBeerNameIsGivenThenReturnABeer() throws BeerNotFoundException {
+        // given
+        BeerDTO expectedFoundBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
+        Beer expectedFoundBeer = beerMapper.toModel(expectedFoundBeerDTO);
 
-            // when
-            when(beerRepository.findByName(expectedFoundBeer.getName())).thenReturn(Optional.of(expectedFoundBeer));
+        // when
+        when(beerRepository.findByName(expectedFoundBeer.getName())).thenReturn(Optional.of(expectedFoundBeer));
 
-            // then
-            BeerDTO foundBeerDTO = beerService.findByName(expectedFoundBeerDTO.getName());
+        // then
+        BeerDTO foundBeerDTO = beerService.findByName(expectedFoundBeerDTO.getName());
 
-            assertThat(foundBeerDTO, is(equalTo(expectedFoundBeerDTO)));
-        }
+        assertThat(foundBeerDTO, is(equalTo(expectedFoundBeerDTO)));
     }
-//
-//    @Test
-//    void whenNotRegisteredBeerNameIsGivenThenThrowAnException() {
-//        // given
-//        BeerDTO expectedFoundBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
-//
-//        // when
-//        when(beerRepository.findByName(expectedFoundBeerDTO.getName())).thenReturn(Optional.empty());
-//
-//        // then
-//        assertThrows(BeerNotFoundException.class, () -> beerService.findByName(expectedFoundBeerDTO.getName()));
-//    }
-//
+
+
+    @Test
+    void whenNotRegisteredBeerNameIsGivenThenThrowAnException() {
+        // given
+        BeerDTO expectedFoundBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
+
+        // when
+        when(beerRepository.findByName(expectedFoundBeerDTO.getName())).thenReturn(Optional.empty());
+
+        // then
+        assertThrows(BeerNotFoundException.class, () -> beerService.findByName(expectedFoundBeerDTO.getName()));
+    }
+}
+
 //    @Test
 //    void whenListBeerIsCalledThenReturnAListOfBeers() {
 //        // given
