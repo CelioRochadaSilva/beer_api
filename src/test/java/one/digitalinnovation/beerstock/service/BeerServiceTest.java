@@ -85,7 +85,7 @@ public class BeerServiceTest {
         // then
         assertThrows(BeerNotFoundException.class, () -> beerService.findByName(expectedFoundBeerDTO.getName()));
     }
-}
+
 
 //    @Test
 //    void whenListBeerIsCalledThenReturnAListOfBeers() {
@@ -235,4 +235,4 @@ public class BeerServiceTest {
 //        assertThrows(BeerNotFoundException.class, () -> beerService.decrement(INVALID_BEER_ID, quantityToDecrement));
 //    }
 //
-//   }
+   }
